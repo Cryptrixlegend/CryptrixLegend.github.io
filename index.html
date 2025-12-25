@@ -1,57 +1,105 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Meri Free Website</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(120deg, #1e3c72, #2a5298);
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>CryptrixLegend</title>
 
-    h1 {
-      margin-top: 120px;
-    }
+<meta name="description" content="CryptrixLegend is a gaming channel for mobile and PC gameplay, tech tutorials, reviews, and live streams.">
 
-    /* LIGHTS */
-    .lights {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      padding: 10px;
-      z-index: 9999;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
 
-    .lights span {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      animation: blink 1.5s infinite alternate;
-    }
+/* 🎄 LIGHTS */
+.lights {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+  z-index: 9999;
+}
+.lights span {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  animation: glow 1.3s infinite alternate;
+}
+.lights span:nth-child(odd){background:red;}
+.lights span:nth-child(even){background:yellow;}
 
-    .lights span:nth-child(1){background:red;}
-    .lights span:nth-child(2){background:yellow; animation-delay:.2s;}
-    .lights span:nth-child(3){background:green; animation-delay:.4s;}
-    .lights span:nth-child(4){background:blue; animation-delay:.6s;}
+@keyframes glow {
+  from {opacity:0.3;}
+  to {opacity:1;}
+}
 
-    @keyframes blink {
-      from {opacity: 0.3;}
-      to {opacity: 1;}
-    }
+/* ❄️ SNOW */
+canvas {
+  position: fixed;
+  top:0;
+  left:0;
+  pointer-events:none;
+  z-index:1;
+}
 
-    /* SNOW */
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-    }
-  </style>
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 5;
+  max-width: 900px;
+  margin: auto;
+  padding: 120px 20px 50px;
+}
+
+h1 {font-size: 40px;}
+p {line-height: 1.6;}
+
+/* 🚗 BMW ANIMATION */
+.road {
+  margin: 60px 0;
+  height: 120px;
+  background: #222;
+  overflow: hidden;
+}
+.car {
+  width: 200px;
+  height: 60px;
+  background: #007bff;
+  border-radius: 10px;
+  position: relative;
+  top: 30px;
+  animation: drive 6s linear infinite;
+}
+.car:before, .car:after {
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -15px;
+}
+.car:before {left: 30px;}
+.car:after {right: 30px;}
+
+@keyframes drive {
+  from {transform: translateX(-250px);}
+  to {transform: translateX(100vw);}
+}
+
+a {
+  color: #00ffea;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
 </head>
 
 <body>
@@ -62,41 +110,73 @@
   <span></span><span></span><span></span><span></span>
 </div>
 
-<h1>🎄 Meri Free Website 🎄</h1>
-<p>Lights + Snowfall working 😍</p>
-
+<!-- SNOW -->
 <canvas id="snow"></canvas>
+
+<div class="content">
+<h1>👋 Welcome to CryptrixLegend! 🙏</h1>
+
+<p>
+This channel is all about gaming—mobile, PC, and everything in between.
+If you love honest gameplay, real reactions, and straightforward tech tips,
+you’re in the right place.
+</p>
+
+<p>
+🔥 Gameplay & Walkthroughs from trending games<br>
+📝 Simple tech tutorials anyone can follow<br>
+🎮 Honest reviews of games, gadgets, and apps<br>
+📰 Daily gaming news & updates<br>
+🔴 Live streams and special events
+</p>
+
+<p>
+Drop a comment anytime — I’d love to hear which game or topic you want me to cover next.<br>
+Don’t forget to subscribe and join the <b>CryptrixLegendArmy</b>!
+</p>
+
+<h2>🚗 BMW M5 Animation</h2>
+<div class="road">
+  <div class="car"></div>
+</div>
+
+<h3>💼 Business & Sponsorships</h3>
+<p>
+📧 officialcryptrixlegend@gmail.com
+</p>
+
+<h2>🔔 Subscribe Here</h2>
+<p>
+<a href="https://youtube.com/@CryptrixLegendofficial" target="_blank">
+youtube.com/@CryptrixLegendofficial
+</a>
+</p>
+
+</div>
 
 <script>
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let snow = [];
-for(let i=0;i<100;i++){
-  snow.push({
-    x: Math.random()*canvas.width,
-    y: Math.random()*canvas.height,
-    r: Math.random()*4+1
-  });
+let snow=[];
+for(let i=0;i<120;i++){
+  snow.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+1});
 }
-
-function draw(){
+function fall(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle="white";
   ctx.beginPath();
-  for(let i=0;i<snow.length;i++){
-    ctx.moveTo(snow[i].x, snow[i].y);
-    ctx.arc(snow[i].x, snow[i].y, snow[i].r, 0, Math.PI*2);
-    snow[i].y += 1;
-    if(snow[i].y > canvas.height) snow[i].y = 0;
-  }
+  snow.forEach(f=>{
+    ctx.moveTo(f.x,f.y);
+    ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
+    f.y+=1.2;
+    if(f.y>canvas.height)f.y=0;
+  });
   ctx.fill();
 }
-
-setInterval(draw, 30);
+setInterval(fall,25);
 </script>
 
 </body>
