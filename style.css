@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #3a0ca3);
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+/* RGB Lights */
+.lights {
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    red, yellow, lime, cyan, blue, magenta, red
+  );
+  background-size: 400%;
+  animation: rgb 5s linear infinite;
+}
+
+@keyframes rgb {
+  0% { background-position: 0%; }
+  100% { background-position: 400%; }
+}
+
+header {
+  padding: 80px 20px;
+}
+
+header h1 {
+  font-size: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: #ff006e;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: #ff4d9d;
+}
+
+.content {
+  padding: 50px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.content ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+.content li {
+  margin: 10px 0;
+}
+
+footer {
+  padding: 20px;
+  background: #00000066;
+  margin-top: 50px;
+}
+
+/* Snow Canvas */
+#snow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
