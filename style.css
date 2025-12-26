@@ -1,19 +1,21 @@
-/* ===== BODY & DARK THEME ===== */
+/* ===== BODY & DARK GAMING THEME ===== */
 body {
-  background: #0a001f; /* Dark purple / black */
+  background: #0b0c2c; /* Dark blue/purple */
   color: #e0e0ff;
   font-family: 'Arial', sans-serif;
   text-align: center;
   overflow-x: hidden;
   margin: 0;
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /* ===== HEADER ===== */
 header {
   padding: 90px 20px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 2;
 }
 
 header h1 {
@@ -39,6 +41,8 @@ header p {
   font-weight: bold;
   box-shadow: 0 0 20px #7209b7;
   transition: 0.3s;
+  z-index: 2;
+  position: relative;
 }
 
 .btn:hover {
@@ -51,9 +55,11 @@ header p {
   padding: 60px 25px;
   max-width: 900px;
   margin: auto;
-  background: rgba(20, 10, 40, 0.6);
+  background: rgba(15, 5, 40, 0.8);
   border-radius: 20px;
-  box-shadow: 0 0 30px rgba(114, 9, 183, 0.3);
+  box-shadow: 0 0 50px rgba(114, 9, 183, 0.4);
+  position: relative;
+  z-index: 2;
 }
 
 /* ===== FOOTER ===== */
@@ -61,9 +67,11 @@ footer {
   padding: 20px;
   color: #bfbfff;
   font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
 }
 
-/* ===== CHRISTMAS JHALAR BULB LIGHTS ===== */
+/* ===== CHRISTMAS BULB LIGHTS ===== */
 .bulb-lights {
   position: fixed;
   top: 0;
@@ -72,15 +80,19 @@ footer {
   display: flex;
   justify-content: space-evenly;
   padding: 15px 0;
-  z-index: 999999;
+  z-index: 3; /* Above everything */
 }
 
 .bulb-lights span {
-  width: 14px;
-  height: 20px;
+  width: 16px;
+  height: 24px;
   border-radius: 50%;
   animation: glow 1.5s infinite alternate;
 }
+
+/* Fast and slow glow for realistic effect */
+.bulb-lights span:nth-child(odd) { animation-duration: 1s; }
+.bulb-lights span:nth-child(even) { animation-duration: 2s; }
 
 .bulb-lights span:nth-child(1){ background:red;}
 .bulb-lights span:nth-child(2){ background:yellow;}
@@ -94,8 +106,9 @@ footer {
 .bulb-lights span:nth-child(10){ background:#80ffdb;}
 
 @keyframes glow {
-  from { opacity: 0.3; box-shadow: 0 0 5px currentColor; }
-  to   { opacity: 1;   box-shadow: 0 0 20px currentColor; }
+  0% { opacity: 0.3; box-shadow: 0 0 5px currentColor; }
+  50% { opacity: 1; box-shadow: 0 0 20px currentColor; }
+  100% { opacity: 0.3; box-shadow: 0 0 5px currentColor; }
 }
 
 /* ===== SNOW CANVAS ===== */
@@ -106,5 +119,5 @@ footer {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1; /* behind header/content */
+  z-index: 1; /* Behind content */
 }
