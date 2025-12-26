@@ -1,80 +1,103 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
+/* ===== BODY & DARK GAMING THEME ===== */
 body {
-  background: linear-gradient(135deg, #1e1e2f, #3a0ca3);
-  color: white;
+  background: radial-gradient(circle at top, #1a0033, #05000f, #000000);
+  color: #e0e0ff;
+  font-family: 'Arial', sans-serif;
   text-align: center;
   overflow-x: hidden;
+  margin: 0;
 }
 
-/* RGB Lights */
-.lights {
-  height: 10px;
-  background: linear-gradient(
-    90deg,
-    red, yellow, lime, cyan, blue, magenta, red
-  );
-  background-size: 400%;
-  animation: rgb 5s linear infinite;
-}
-
-@keyframes rgb {
-  0% { background-position: 0%; }
-  100% { background-position: 400%; }
-}
-
+/* ===== HEADER ===== */
 header {
-  padding: 80px 20px;
+  padding: 90px 20px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
 header h1 {
   font-size: 3rem;
+  color: #c77dff;
+  text-shadow: 0 0 20px #7209b7;
 }
 
+header p {
+  font-size: 1.2rem;
+  color: #e0e0ff;
+}
+
+/* ===== BUTTON ===== */
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  background: #ff006e;
+  margin-top: 25px;
+  padding: 15px 35px;
+  background: linear-gradient(45deg, #7209b7, #560bad);
   color: white;
   text-decoration: none;
-  border-radius: 30px;
+  border-radius: 40px;
   font-weight: bold;
+  box-shadow: 0 0 20px #7209b7;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #ff4d9d;
+  transform: scale(1.05);
+  box-shadow: 0 0 35px #b5179e;
 }
 
+/* ===== CONTENT ===== */
 .content {
-  padding: 50px 20px;
+  padding: 60px 25px;
   max-width: 900px;
   margin: auto;
+  background: rgba(20, 10, 40, 0.6);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(114, 9, 183, 0.3);
 }
 
-.content ul {
-  list-style: none;
-  margin-top: 20px;
-}
-
-.content li {
-  margin: 10px 0;
-}
-
+/* ===== FOOTER ===== */
 footer {
   padding: 20px;
-  background: #00000066;
-  margin-top: 50px;
+  color: #bfbfff;
+  font-size: 0.9rem;
 }
 
-/* Snow Canvas */
-#snow {
+/* ===== CHRISTMAS JHALAR BULB LIGHTS ===== */
+.bulb-lights {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px 0;
+  z-index: 999999;
+}
+
+.bulb-lights span {
+  width: 14px;
+  height: 20px;
+  border-radius: 50%;
+  animation: glow 1.5s infinite alternate;
+}
+
+.bulb-lights span:nth-child(1){ background:red;}
+.bulb-lights span:nth-child(2){ background:yellow;}
+.bulb-lights span:nth-child(3){ background:lime;}
+.bulb-lights span:nth-child(4){ background:cyan;}
+.bulb-lights span:nth-child(5){ background:magenta;}
+.bulb-lights span:nth-child(6){ background:orange;}
+.bulb-lights span:nth-child(7){ background:#00f5ff;}
+.bulb-lights span:nth-child(8){ background:#9d4edd;}
+.bulb-lights span:nth-child(9){ background:#ff006e;}
+.bulb-lights span:nth-child(10){ background:#80ffdb;}
+
+@keyframes glow {
+  from {
+    opacity: 0.3;
+    box-shadow: 0 0 5px currentColor;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 20px currentColor;
+  }
 }
