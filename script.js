@@ -1,12 +1,14 @@
-// Snowfall
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
 
 const snowflakes = [];
-
 for (let i = 0; i < 150; i++) {
   snowflakes.push({
     x: Math.random() * canvas.width,
@@ -17,12 +19,12 @@ for (let i = 0; i < 150; i++) {
 }
 
 function drawSnow() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "white";
   ctx.beginPath();
   for (let flake of snowflakes) {
     ctx.moveTo(flake.x, flake.y);
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI*2);
+    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
   }
   ctx.fill();
   moveSnow();
