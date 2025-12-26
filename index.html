@@ -1,183 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>CryptrixLegend</title>
+  <meta charset="UTF-8">
+  <title>CryptrixLegend | Gaming Channel</title>
 
-<meta name="description" content="CryptrixLegend is a gaming channel for mobile and PC gameplay, tech tutorials, reviews, and live streams.">
+  <!-- SEO -->
+  <meta name="description" content="CryptrixLegend gaming channel – gameplay, tech tutorials, reviews & live streams">
+  <meta name="keywords" content="CryptrixLegend, gaming, gameplay, tech tutorials">
+  <meta name="author" content="CryptrixLegend">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(to bottom, #000428, #004e92);
-  color: white;
-  text-align: center;
-  overflow-x: hidden;
-}
-
-/* 🎄 LIGHTS */
-.lights {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  padding: 10px;
-  z-index: 9999;
-}
-.lights span {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  animation: glow 1.3s infinite alternate;
-}
-.lights span:nth-child(odd){background:red;}
-.lights span:nth-child(even){background:yellow;}
-
-@keyframes glow {
-  from {opacity:0.3;}
-  to {opacity:1;}
-}
-
-/* ❄️ SNOW */
-canvas {
-  position: fixed;
-  top:0;
-  left:0;
-  pointer-events:none;
-  z-index:1;
-}
-
-/* CONTENT */
-.content {
-  position: relative;
-  z-index: 5;
-  max-width: 900px;
-  margin: auto;
-  padding: 120px 20px 50px;
-}
-
-h1 {font-size: 40px;}
-p {line-height: 1.6;}
-
-/* 🚗 BMW ANIMATION */
-.road {
-  margin: 60px 0;
-  height: 120px;
-  background: #222;
-  overflow: hidden;
-}
-.car {
-  width: 200px;
-  height: 60px;
-  background: #007bff;
-  border-radius: 10px;
-  position: relative;
-  top: 30px;
-  animation: drive 6s linear infinite;
-}
-.car:before, .car:after {
-  content: "";
-  width: 30px;
-  height: 30px;
-  background: black;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -15px;
-}
-.car:before {left: 30px;}
-.car:after {right: 30px;}
-
-@keyframes drive {
-  from {transform: translateX(-250px);}
-  to {transform: translateX(100vw);}
-}
-
-a {
-  color: #00ffea;
-  text-decoration: none;
-  font-weight: bold;
-}
-</style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- LIGHTS -->
-<div class="lights">
-  <span></span><span></span><span></span><span></span>
-  <span></span><span></span><span></span><span></span>
-</div>
+<!-- RGB Lights -->
+<div class="lights"></div>
 
-<!-- SNOW -->
+<!-- Snowfall -->
 <canvas id="snow"></canvas>
 
-<div class="content">
-<h1>👋 Welcome to CryptrixLegend! 🙏</h1>
+<header>
+  <h1>🎮 CryptrixLegend</h1>
+  <p>Gaming • Tech • Reviews • Live Streams</p>
 
-<p>
-This channel is all about gaming—mobile, PC, and everything in between.
-If you love honest gameplay, real reactions, and straightforward tech tips,
-you’re in the right place.
-</p>
+  <a class="btn" href="https://youtube.com/@CryptrixLegendofficial" target="_blank">
+    Subscribe on YouTube 🔥
+  </a>
+</header>
 
-<p>
-🔥 Gameplay & Walkthroughs from trending games<br>
-📝 Simple tech tutorials anyone can follow<br>
-🎮 Honest reviews of games, gadgets, and apps<br>
-📰 Daily gaming news & updates<br>
-🔴 Live streams and special events
-</p>
+<section class="content">
+  <h2>Welcome to CryptrixLegend!</h2>
 
-<p>
-Drop a comment anytime — I’d love to hear which game or topic you want me to cover next.<br>
-Don’t forget to subscribe and join the <b>CryptrixLegendArmy</b>!
-</p>
+  <p>
+    This channel is all about gaming—mobile, PC, and everything in between.
+    Honest gameplay, real reactions & simple tech tips.
+  </p>
 
-<h2>🚗 BMW M5 Animation</h2>
-<div class="road">
-  <div class="car"></div>
-</div>
+  <ul>
+    <li>🔥 Gameplay & Walkthroughs</li>
+    <li>📝 Easy Tech Tutorials</li>
+    <li>🎮 Honest Reviews</li>
+    <li>📰 Daily Gaming News</li>
+    <li>🔴 Live Streams</li>
+  </ul>
 
-<h3>💼 Business & Sponsorships</h3>
-<p>
-📧 officialcryptrixlegend@gmail.com
-</p>
+  <h3>Business & Sponsorship</h3>
+  <p>📧 officialcryptrixlegend@gmail.com</p>
+</section>
 
-<h2>🔔 Subscribe Here</h2>
-<p>
-<a href="https://youtube.com/@CryptrixLegendofficial" target="_blank">
-youtube.com/@CryptrixLegendofficial
-</a>
-</p>
+<footer>
+  © 2025 CryptrixLegend. All Rights Reserved.
+</footer>
 
-</div>
-
-<script>
-const canvas = document.getElementById("snow");
-const ctx = canvas.getContext("2d");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let snow=[];
-for(let i=0;i<120;i++){
-  snow.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*3+1});
-}
-function fall(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  ctx.fillStyle="white";
-  ctx.beginPath();
-  snow.forEach(f=>{
-    ctx.moveTo(f.x,f.y);
-    ctx.arc(f.x,f.y,f.r,0,Math.PI*2);
-    f.y+=1.2;
-    if(f.y>canvas.height)f.y=0;
-  });
-  ctx.fill();
-}
-setInterval(fall,25);
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
+
