@@ -1,89 +1,76 @@
-<!-- 🚗 LOADING SCREEN -->
-<div id="loader">
-  <div class="tyre"></div>
-</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CryptrixLegend | Gaming Channel</title>
-
-  <!-- Google Verification -->
-  <meta name="google-site-verification" content="OuYR-eu_5xxOOorzbn_TP1UIHD2GacmE6KH_-RIIfJg">
-
-  <!-- SEO -->
-  <meta name="description" content="CryptrixLegend gaming channel – gameplay, tech tutorials, reviews & live streams">
-  <meta name="keywords" content="CryptrixLegend, gaming, gameplay, tech tutorials">
-  <meta name="author" content="CryptrixLegend">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CryptrixLegend | Gaming Channel</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
 
-  <!-- 🎄 STRING LIGHTS -->
+<!-- 🚗 LOADING SCREEN -->
+<div id="loader"><div class="tyre"></div></div>
+
+<!-- 🎄 STRING LIGHTS -->
 <div class="string-lights">
   <span></span><span></span><span></span><span></span>
   <span></span><span></span><span></span><span></span>
 </div>
 
+<!-- ❄ SNOW CANVAS -->
+<canvas id="snow"></canvas>
 
+<!-- HEADER + NAVBAR -->
+<header id="home">
+  <h1>🎮 CryptrixLegend</h1>
+  <p>Gaming • Tech • Reviews • Live Streams</p>
+  <a class="btn" href="https://youtube.com/@CryptrixLegendofficial" target="_blank">Subscribe on YouTube 🔥</a>
 
-  <!-- ❄ SNOW -->
-  <canvas id="snow"></canvas>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+    <ul id="nav-menu">
+      <li class="active"><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- HEADER -->
-  <header>
-    <h1>🎮 CryptrixLegend</h1>
-    <p>Gaming • Tech • Reviews • Live Streams</p>
-    <a class="btn" href="https://youtube.com/@CryptrixLegendofficial" target="_blank">
-      Subscribe on YouTube 🔥
-    </a>
-  </header>
-
-  <!-- CONTENT -->
-  <!-- 🎥 LATEST YOUTUBE VIDEO -->
-<section class="content">
+<!-- CONTENT -->
+<section class="content" id="video">
   <h2>Latest Upload 🔥</h2>
   <div class="video-box">
-   <iframe
-  src="https://www.youtube.com/embed/FxMrbgUse00"
-  frameborder="0"
-  allowfullscreen>
-</iframe>
-
-
+    <iframe src="https://www.youtube.com/embed/FxMrbgUse00" frameborder="0" allowfullscreen></iframe>
   </div>
 </section>
 
-  <section class="content">
-    <h2>Welcome to CryptrixLegend Gaming Universe</h2>
-    <p>
-      CryptrixLegend is a next-generation gaming & tech channel where passion meets performance.
-      Gameplay, live streams, honest reviews & simple tech tutorials.
-    </p>
+<section class="content" id="about">
+  <h2>Welcome to CryptrixLegend Gaming Universe</h2>
+  <p>
+    CryptrixLegend is a next-generation gaming & tech channel where passion meets performance.
+    Gameplay, live streams, honest reviews & simple tech tutorials.
+  </p>
+  <ul>
+    <li>🎮 High-Quality Gameplay</li>
+    <li>🔥 Live Streams</li>
+    <li>🧠 Tech Tutorials</li>
+    <li>🎯 Honest Reviews</li>
+    <li>🚀 Gaming Updates</li>
+  </ul>
+</section>
 
-    <ul>
-      <li>🎮 High-Quality Gameplay</li>
-      <li>🔥 Live Streams</li>
-      <li>🧠 Tech Tutorials</li>
-      <li>🎯 Honest Reviews</li>
-      <li>🚀 Gaming Updates</li>
-    </ul>
+<section class="content" id="contact">
+  <h2>Contact Us</h2>
+  <p>📧 officialcryptrixlegend@gmail.com</p>
+  <p id="date-time"></p>
+</section>
 
-    <h3>Business & Sponsorship</h3>
-    <p>📧 officialcryptrixlegend@gmail.com</p>
-  </section>
+<footer>
+  © 2025 CryptrixLegend. All Rights Reserved.
+</footer>
 
-  <!-- FOOTER -->
-  <footer>
-    © 2025 CryptrixLegend. All Rights Reserved.
-  </footer>
-
-  <!-- JS -->
-  <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
