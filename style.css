@@ -113,9 +113,10 @@ footer{
   width:14px;
   height:14px;
   border-radius:50%;
-  animation:blink 2.5s infinite alternate; /* Faster than before */
-  box-shadow:0 0 8px currentColor;
+  animation:blink 1.5s infinite alternate; /* Speed thodi tez ki */
+  box-shadow:0 0 12px currentColor; /* Glow thoda strong */
 }
+
 .string-lights span::before{
   content:"";
   position:absolute;
@@ -145,10 +146,13 @@ footer{
 .string-lights span:nth-child(16){background:orange;}
 
 @keyframes blink{
-  0%{opacity:.3}
-  50%{opacity:.8}
-  100%{opacity:1;box-shadow:0 0 15px currentColor;}
+  0%{opacity:0.2; box-shadow:0 0 6px currentColor;}
+  25%{opacity:0.5; box-shadow:0 0 10px currentColor;}
+  50%{opacity:0.8; box-shadow:0 0 15px currentColor;}
+  75%{opacity:0.6; box-shadow:0 0 12px currentColor;}
+  100%{opacity:1; box-shadow:0 0 18px currentColor;}
 }
+
 
 /* ===== SNOW ===== */
 #snow{
