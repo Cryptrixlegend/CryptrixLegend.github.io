@@ -58,8 +58,6 @@ footer{
   z-index:9999;
 }
 
-}
-/* ===== GAMING LOADER ===== */
 /* ===== GAMING LOADER ===== */
 .gaming-loader{
   display:flex;
@@ -93,9 +91,7 @@ footer{
   100%{opacity:.2}
 }
 
-}
-
-/* ===== STRING LIGHTS ===== */
+/* ===== STRING LIGHTS (Updated Working Version) ===== */
 .string-lights{
   position:fixed;
   top:0;
@@ -113,8 +109,9 @@ footer{
   width:14px;
   height:14px;
   border-radius:50%;
-  animation:blink 1.5s infinite alternate; /* Speed thodi tez ki */
-  box-shadow:0 0 12px currentColor; /* Glow thoda strong */
+  background-color:red; /* default color */
+  animation:blink 1.2s infinite;
+  box-shadow:0 0 12px red;
 }
 
 .string-lights span::before{
@@ -127,32 +124,29 @@ footer{
   background:#222;
 }
 
-/* COLORS FOR 16 BULBS */
-.string-lights span:nth-child(1){background:red;}
-.string-lights span:nth-child(2){background:yellow;}
-.string-lights span:nth-child(3){background:white;}
-.string-lights span:nth-child(4){background:pink;}
-.string-lights span:nth-child(5){background:blue;}
-.string-lights span:nth-child(6){background:orange;}
-.string-lights span:nth-child(7){background:lime;}
-.string-lights span:nth-child(8){background:cyan;}
-.string-lights span:nth-child(9){background:magenta;}
-.string-lights span:nth-child(10){background:gold;}
-.string-lights span:nth-child(11){background:red;}
-.string-lights span:nth-child(12){background:yellow;}
-.string-lights span:nth-child(13){background:white;}
-.string-lights span:nth-child(14){background:pink;}
-.string-lights span:nth-child(15){background:blue;}
-.string-lights span:nth-child(16){background:orange;}
+/* COLORS AND INDIVIDUAL DELAYS */
+.string-lights span:nth-child(1){background:red; animation-delay:0s; box-shadow:0 0 12px red;}
+.string-lights span:nth-child(2){background:yellow; animation-delay:0.1s; box-shadow:0 0 12px yellow;}
+.string-lights span:nth-child(3){background:white; animation-delay:0.2s; box-shadow:0 0 12px white;}
+.string-lights span:nth-child(4){background:pink; animation-delay:0.3s; box-shadow:0 0 12px pink;}
+.string-lights span:nth-child(5){background:blue; animation-delay:0.4s; box-shadow:0 0 12px blue;}
+.string-lights span:nth-child(6){background:orange; animation-delay:0.5s; box-shadow:0 0 12px orange;}
+.string-lights span:nth-child(7){background:lime; animation-delay:0.6s; box-shadow:0 0 12px lime;}
+.string-lights span:nth-child(8){background:cyan; animation-delay:0.7s; box-shadow:0 0 12px cyan;}
+.string-lights span:nth-child(9){background:magenta; animation-delay:0.8s; box-shadow:0 0 12px magenta;}
+.string-lights span:nth-child(10){background:gold; animation-delay:0.9s; box-shadow:0 0 12px gold;}
+.string-lights span:nth-child(11){background:red; animation-delay:1s; box-shadow:0 0 12px red;}
+.string-lights span:nth-child(12){background:yellow; animation-delay:1.1s; box-shadow:0 0 12px yellow;}
+.string-lights span:nth-child(13){background:white; animation-delay:1.2s; box-shadow:0 0 12px white;}
+.string-lights span:nth-child(14){background:pink; animation-delay:1.3s; box-shadow:0 0 12px pink;}
+.string-lights span:nth-child(15){background:blue; animation-delay:1.4s; box-shadow:0 0 12px blue;}
+.string-lights span:nth-child(16){background:orange; animation-delay:1.5s; box-shadow:0 0 12px orange;}
 
 @keyframes blink{
-  0%{opacity:0.2; box-shadow:0 0 6px currentColor;}
-  25%{opacity:0.5; box-shadow:0 0 10px currentColor;}
-  50%{opacity:0.8; box-shadow:0 0 15px currentColor;}
-  75%{opacity:0.6; box-shadow:0 0 12px currentColor;}
-  100%{opacity:1; box-shadow:0 0 18px currentColor;}
+  0%{opacity:0.2;}
+  50%{opacity:1;}
+  100%{opacity:0.2;}
 }
-
 
 /* ===== SNOW ===== */
 #snow{
