@@ -1,38 +1,21 @@
-const canvas = document.getElementById("snow");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let snowflakes = [];
-
-for (let i = 0; i < 100; i++) {
-  snowflakes.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: Math.random() * 4 + 1,
-    d: Math.random() + 1
-  });
+// LOADER
+window.addEventListener("load",()=>{document.getElementById("loader").style.display="none"})
+// HAMBURGER
+const hamburger=document.getElementById("hamburger"),navMenu=document.getElementById("nav-menu")
+hamburger.addEventListener("click",()=>{navMenu.classList.toggle("show")})
+// ACTIVE MENU
+document.querySelectorAll("#nav-menu li").forEach(item=>{
+  item.addEventListener("click",()=>{
+    document.querySelectorAll("#nav-menu li").forEach(i=>i.classList.remove("active"))
+    item.classList.add("active")
+    navMenu.classList.remove("show")
+  })
+})
+// DATE & TIME
+function updateDateTime(){
+  const dt=document.getElementById("date-time")
+  const now=new Date()
+  dt.textContent=now.toLocaleString()
 }
-
-function drawSnow() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "white";
-  ctx.beginPath();
-
-  snowflakes.forEach(flake => {
-    ctx.moveTo(flake.x, flake.y);
-    ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
-  });
-
-  ctx.fill();
-  snowflakes.forEach(flake => {
-    flake.y += flake.d;
-    if (flake.y > canvas.height) {
-      flake.y = 0;
-      flake.x = Math.random() * canvas.width;
-    }
-  });
-}
-
-setInterval(drawSnow, 30);
+setInterval(updateDateTime,1000)
+updateDateTime()
