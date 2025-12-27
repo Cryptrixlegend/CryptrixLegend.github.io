@@ -59,12 +59,36 @@ footer{
   z-index:9999;
 }
 .tyre{
-  width:80px;
-  height:80px;
-  border:12px solid #fff;
+  width:90px;
+  height:90px;
   border-radius:50%;
-  border-top:12px solid #ef4444;
-  animation:spin 1s linear infinite;
+  background:#000;
+  position:relative;
+  animation:spin .9s linear infinite;
+  box-shadow:0 0 15px rgba(255,0,0,.6);
+}
+
+.tyre::before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:6px solid #ef4444;
+  border-radius:50%;
+}
+
+.tyre::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 8px,
+      rgba(255,255,255,.08) 8px 10px
+    );
+}
+
 }
 @keyframes spin{
   from{transform:rotate(0deg)}
