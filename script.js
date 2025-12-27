@@ -1,21 +1,17 @@
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
 
-const snowflakes = [];
-for (let i = 0; i < 200; i++) { // more flakes for realism
+let snowflakes = [];
+
+for (let i = 0; i < 100; i++) {
   snowflakes.push({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    radius: Math.random() * 3 + 1.5, // bigger flakes
-    speed: Math.random() * 1.2 + 0.3,
-    wind: Math.random() * 0.5 - 0.25
+    r: Math.random() * 4 + 1,
+    d: Math.random() + 1
   });
 }
 
@@ -23,23 +19,20 @@ function drawSnow() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "white";
   ctx.beginPath();
-  for (let flake of snowflakes) {
+
+  snowflakes.forEach(flake => {
     ctx.moveTo(flake.x, flake.y);
-    ctx.arc(flake.x, flake.y, flake.radius, 0, Math.PI * 2);
-  }
+    ctx.arc(flake.x, flake.y, flake.r, 0, Math.PI * 2);
+  });
+
   ctx.fill();
-  moveSnow();
-  requestAnimationFrame(drawSnow);
+  snowflakes.forEach(flake => {
+    flake.y += flake.d;
+    if (flake.y > canvas.height) {
+      flake.y = 0;
+      flake.x = Math.random() * canvas.width;
+    }
+  });
 }
 
-function moveSnow() {
-  for (let flake of snowflakes) {
-    flake.y += flake.speed;
-    flake.x += flake.wind;
-    if (flake.y > canvas.height) flake.y = 0;
-    if (flake.x > canvas.width) flake.x = 0;
-    if (flake.x < 0) flake.x = canvas.width;
-  }
-}
-
-drawSnow();
+setInterval(drawSnow, 30);
