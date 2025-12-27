@@ -87,63 +87,62 @@ footer{
   100%{opacity:.2}
 }
 
-/* ===== STRING LIGHTS ===== */
-.string-lights{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:80px;
-  display:flex;
-  justify-content:space-around;
-  align-items:flex-start;
-  z-index:1000;
+/* ===== STRING LIGHTS - Original Wire Connected Effect ===== */
+.string-lights {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  z-index: 1000;
 }
 
-.string-lights span{
-  position:relative;
-  width:14px;
-  height:14px;
-  border-radius:50%;
-  background-color:red;
-  animation:blink 1.5s infinite;
-  box-shadow:0 0 12px currentColor;
+.string-lights span {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px currentColor;
+  animation: blink-seq 2s infinite;
 }
 
-.string-lights span::before{
-  content:"";
-  position:absolute;
-  top:-30px;
-  left:50%;
-  width:2px;
-  height:30px;
-  background:#222;
+.string-lights span::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  width: 2px;
+  height: 30px;
+  background: #222;
 }
 
+/* COLORS + SEQUENTIAL ANIMATION DELAY */
 .string-lights span:nth-child(1){background:red; animation-delay:0s;}
-.string-lights span:nth-child(2){background:yellow; animation-delay:0.1s;}
-.string-lights span:nth-child(3){background:white; animation-delay:0.2s;}
-.string-lights span:nth-child(4){background:pink; animation-delay:0.3s;}
-.string-lights span:nth-child(5){background:blue; animation-delay:0.4s;}
-.string-lights span:nth-child(6){background:orange; animation-delay:0.5s;}
-.string-lights span:nth-child(7){background:lime; animation-delay:0.6s;}
-.string-lights span:nth-child(8){background:cyan; animation-delay:0.7s;}
-.string-lights span:nth-child(9){background:magenta; animation-delay:0.8s;}
-.string-lights span:nth-child(10){background:gold; animation-delay:0.9s;}
-.string-lights span:nth-child(11){background:red; animation-delay:1s;}
-.string-lights span:nth-child(12){background:yellow; animation-delay:1.1s;}
-.string-lights span:nth-child(13){background:white; animation-delay:1.2s;}
-.string-lights span:nth-child(14){background:pink; animation-delay:1.3s;}
-.string-lights span:nth-child(15){background:blue; animation-delay:1.4s;}
-.string-lights span:nth-child(16){background:orange; animation-delay:1.5s;}
+.string-lights span:nth-child(2){background:yellow; animation-delay:0.2s;}
+.string-lights span:nth-child(3){background:white; animation-delay:0.4s;}
+.string-lights span:nth-child(4){background:pink; animation-delay:0.6s;}
+.string-lights span:nth-child(5){background:blue; animation-delay:0.8s;}
+.string-lights span:nth-child(6){background:orange; animation-delay:1s;}
+.string-lights span:nth-child(7){background:lime; animation-delay:1.2s;}
+.string-lights span:nth-child(8){background:cyan; animation-delay:1.4s;}
+.string-lights span:nth-child(9){background:magenta; animation-delay:1.6s;}
+.string-lights span:nth-child(10){background:gold; animation-delay:1.8s;}
+.string-lights span:nth-child(11){background:red; animation-delay:2s;}
+.string-lights span:nth-child(12){background:yellow; animation-delay:2.2s;}
+.string-lights span:nth-child(13){background:white; animation-delay:2.4s;}
+.string-lights span:nth-child(14){background:pink; animation-delay:2.6s;}
+.string-lights span:nth-child(15){background:blue; animation-delay:2.8s;}
+.string-lights span:nth-child(16){background:orange; animation-delay:3s;}
 
-@keyframes blink{
-  0%{opacity:0.2; transform:scale(0.8);}
-  25%{opacity:0.5; transform:scale(1);}
-  50%{opacity:1; transform:scale(1.2);}
-  75%{opacity:0.5; transform:scale(1);}
-  100%{opacity:0.2; transform:scale(0.8);}
+@keyframes blink-seq {
+  0%   {opacity: 0.3; box-shadow:0 0 5px currentColor;}
+  50%  {opacity: 1; box-shadow:0 0 20px currentColor;}
+  100% {opacity: 0.3; box-shadow:0 0 5px currentColor;}
 }
+
 
 /* ===== SNOW ===== */
 #snow{
