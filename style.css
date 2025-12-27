@@ -1,8 +1,9 @@
 body{margin:0;font-family:Arial,sans-serif;background:#0b1e4f;color:white;text-align:center}
 header{padding:30px 20px}
-.btn{display:inline-block;margin-top:15px;padding:12px 25px;background:#ef4444;color:white;text-decoration:none;border-radius:25px;box-shadow:0 0 15px rgba(239,68,68,0.7);transition:transform .3s,box-shadow .3s}
+.btn{display:inline-block;margin-top:15px;padding:12px 25px;background:#ef4444;color:white;text-decoration:none;border-radius:25px;box-shadow:0 0 15px rgba(239,68,68,0.7);transition:transform .3s,box-shadow .3s;text-shadow:0 0 6px #fff,0 0 12px #ff0,0 0 18px #f0f,0 0 24px #0ff}
 .btn:hover{transform:scale(1.05);box-shadow:0 0 25px rgba(239,68,68,1)}
 .content{padding:30px 20px}
+.content p, .content li{text-shadow:0 0 4px #fff,0 0 8px #ff0,0 0 12px #f0f}
 footer{padding:15px;background:rgba(0,0,0,0.4)}
 /* LOADER */
 #loader{position:fixed;width:100%;height:100%;background:#0b1e4f;display:flex;justify-content:center;align-items:center;z-index:9999}
@@ -10,17 +11,25 @@ footer{padding:15px;background:rgba(0,0,0,0.4)}
 @keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 /* LIGHTS */
 .string-lights{position:fixed;top:0;left:0;width:100%;height:80px;display:flex;justify-content:space-around;align-items:flex-start;z-index:1000}
-.string-lights span{position:relative;width:14px;height:14px;border-radius:50%;animation:blink 1.5s infinite alternate}
+.string-lights span{position:relative;width:14px;height:14px;border-radius:50%;animation:blink 4s infinite alternate;box-shadow:0 0 8px currentColor}
 .string-lights span::before{content:"";position:absolute;top:-30px;left:50%;width:2px;height:30px;background:#222}
-.string-lights span:nth-child(1){background:red}
-.string-lights span:nth-child(2){background:yellow}
-.string-lights span:nth-child(3){background:white}
-.string-lights span:nth-child(4){background:pink}
-.string-lights span:nth-child(5){background:blue}
-.string-lights span:nth-child(6){background:pink}
-.string-lights span:nth-child(7){background:orange}
-.string-lights span:nth-child(8){background:lime}
-@keyframes blink{from{opacity:.3}to{opacity:1;box-shadow:0 0 12px currentColor}}
+.string-lights span:nth-child(1){background:red;}
+.string-lights span:nth-child(2){background:yellow;}
+.string-lights span:nth-child(3){background:white;}
+.string-lights span:nth-child(4){background:pink;}
+.string-lights span:nth-child(5){background:blue;}
+.string-lights span:nth-child(6){background:orange;}
+.string-lights span:nth-child(7){background:lime;}
+.string-lights span:nth-child(8){background:cyan;}
+.string-lights span:nth-child(9){background:magenta;}
+.string-lights span:nth-child(10){background:gold;}
+.string-lights span:nth-child(11){background:red;}
+.string-lights span:nth-child(12){background:yellow;}
+.string-lights span:nth-child(13){background:white;}
+.string-lights span:nth-child(14){background:pink;}
+.string-lights span:nth-child(15){background:blue;}
+.string-lights span:nth-child(16){background:orange;}
+@keyframes blink{0%{opacity:.3}50%{opacity:.8}100%{opacity:1;box-shadow:0 0 15px currentColor}}
 /* SNOW */
 #snow{position:fixed;top:0;left:0;pointer-events:none;z-index:999}
 /* NAVBAR */
